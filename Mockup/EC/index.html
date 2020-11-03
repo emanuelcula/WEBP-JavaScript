@@ -54,33 +54,19 @@
                     <p class="text-white mt-5 mb-5">Hallo, wir hoffen du bleibst gesund</p>
                 </div>
             </div>
-            <!-- row -->
-            <div class="row tm-content-row">
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+            
+            <div class=".container-fluid" style="height:50%">
+              <!--  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">-->
                     <div class="tm-bg-primary-dark tm-block">
-                        <h2 class="tm-block-title">Cantons</h2>
-                        <img src="img/30days.png" alt="30days"/>
-                       <!-- <canvas id="lineChart"></canvas> -->
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block">
-                        <h2 class="tm-block-title">All Cases</h2>
-                        <img src="img/alldays.png" alt="alldays"/>
-                        <!-- <canvas id="barChart"></canvas> -->
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller">
-                        <h2 class="tm-block-title">Cantons</h2>
-                        <div id="pieChartContainer">
-                            <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
-                        </div>                        
-                    </div>
-                </div>
-                
+
+                        <h2 class="tm-block-title">Cantons | Total Cases</h2>
+                        
+                        <canvas id="myChart"></canvas>           
+                     </div>
             </div>
-        </div>
+
+
+
         <footer class="tm-footer row tm-mt-small">
             <div class="col-12 font-weight-light">
               <p class="text-center text-white mb-0 px-4 small">
@@ -90,6 +76,12 @@
           </footer>
     </div>
 
+
+
+
+
+    <script src="js/data.js"></script>
+    <!-- Load Data -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- https://jquery.com/download/ -->
     <script src="js/moment.min.js"></script>
@@ -99,6 +91,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->
     <script src="js/tooplate-scripts.js"></script>
+
     <script>
         Chart.defaults.global.defaultFontColor = 'white';
         let ctxLine,
@@ -124,6 +117,75 @@
             });
         })
     </script>
+
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
+            datasets: [{
+                label: 'ZH',
+                data: [1200, 1900, 3000, 5000, 2000, 300, 4000, 8000,],
+                backgroundColor: [
+                    'rgba(255, 0, 0, 0.1)',
+                    
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 1
+                },
+                {
+                label: 'SH',
+                data: [2000, 12000, 14658, 500, 2456, 13543, 5046, 8549,],
+                backgroundColor: [
+                    'rgba(255, 255, 0, 0.1)',
+                 
+                ],
+                borderColor: [
+                    'rgba(255, 255, 0, 1)',
+               
+                ],
+                borderWidth: 1
+                },
+            
+                {
+                label: 'SG',
+                data: [5000, 15631, 19543, 2154, 6548, 1235, 6517, 8016,],
+                backgroundColor: [
+                    'rgba(0, 255, 0, 0.1)',
+                    
+                ],
+                borderColor: [
+                    'rgba(0, 255, 0, 1)',
+                ],
+                borderWidth: 1
+                }
+                
+            ]
+            
+
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        max: 20000,
+                        min: 0,
+                        stepSize: 2500
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
+
+
+
+
 </body>
 
 </html>
