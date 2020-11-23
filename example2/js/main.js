@@ -6,8 +6,7 @@ let covid19data;
     // set a function for each button
     setButtonFunctions();
 
-    // fetch from each API when the page loads
-   
+    // fetch from each API when the page loads  
     getLatestCOVID19Data();
 })();
 
@@ -65,3 +64,52 @@ async function getLatestCOVID19Data()
         console.log(err);
     });
 }
+
+
+// GET Request countries. (probably the best API for this project)
+fetch('https://disease.sh/v3/covid-19/historical/switzerland,usa,sweden?lastdays=290')
+    // Handle success
+    .then(response => response.json())  // convert to json
+    .then(json => console.log(json))    //print data to console
+    .catch(err => console.log('Request Failed', err)); // Catch errors
+  
+
+
+/*
+// COVID 19 Data Test
+async function getLatestCOVID19Data()
+{
+    await fetch("https://disease.sh/v3/covid-19/historical/switzerland,usa,sweden?lastdays=290", {
+    })
+    .then(response => response.json())
+    .then(response => {
+        console.log("COVID 19 API object:");
+        console.log(response);
+        console.log("\n");
+
+        // add all countries to select element
+        response.response.forEach(c => {
+            const option = document.createElement('option');
+            option.innerHTML = c.country;
+            document.getElementById('countries').appendChild(option);
+        })
+
+        // save covid data to global variable
+        covid19data = response.response;
+    })
+    .catch(err => {
+        console.log(err);
+    });
+}
+*/
+
+
+/*
+// GET Request cantons .
+fetch('https://disease.sh/v3/covid-19/gov/switzerland?allowNull=true')
+    // Handle success
+    .then(response => response.json())  // convert to json
+    .then(json => console.log(json))    //print data to console
+    .catch(err => console.log('Request Failed', err)); // Catch errors
+*/
+    
