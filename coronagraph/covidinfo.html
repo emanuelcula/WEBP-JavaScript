@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>COVID info</title>
+    <!-- This is a general library to make usage of javascript easier and cross-browser; mainly used to make the AJAX call to the corona library -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!-- General styling for the page -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"><!-- The font used on the page -->
+    <link rel="stylesheet" href="css/fontawesome.min.css"><!-- Library of icons; this is used for the two icons in the menu -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"><!-- The css library used for general styling classes to give the page its layout -->
+    <script src="js/bootstrap.min.js"></script> <!-- The javascript side of the bootstrap library; used for the menu on smaller screens -->
+    <link rel="stylesheet" href="css/templatemo-style.css"> <!-- General CSS styling of the page -->
+
+    <!-- The library used to draw the chart -->
+    <script src="js/Chart.min.js"></script>
+  </head>
+
+  <body id="reportsPage">
+    <div class="" id="home">
+      <nav class="navbar navbar-expand-xl">
+        <div class="container h-100">
+          <a class="navbar-brand" href="index.html">
+            <h1 class="tm-site-title mb-0">COVID info</h1>
+          </a>
+          <button
+            class="navbar-toggler ml-auto mr-0"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars tm-nav-icon"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto h-100">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" href="covidinfo.html">
+                  <i class="far fa-user"></i> COVID info
+                    <span class="sr-only">(current)</span>
+                </a>
+              </li>
+             
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">
+                  <i class="far fa-user"></i> About
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container mt-5">
+        <div class="row tm-content-row">
+          <div class="col-12 tm-block-col">
+            <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+              <h2 class="tm-block-title">COVID info</h2>
+              <p class="text-white">Corona text</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="tm-footer row tm-mt-small">
+        <div class="col-12 font-weight-light">
+          <p class="text-center text-white mb-0 px-4 small">
+            Copyright &copy; <b>2020</b> Covid-Tracker by Students FHGR - Webprogrammierung
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
