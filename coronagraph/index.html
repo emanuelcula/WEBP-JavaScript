@@ -11,11 +11,11 @@
     <script src="js/jquery-3.3.1.min.js"></script>
 
     <!-- Style -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"><!-- The font used on the page -->
-    <link rel="stylesheet" href="css/fontawesome.min.css"><!-- Library of icons; this is used for the two icons in the menu -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"><!-- The css library used for general styling classes to give the page its layout -->
-    <script src="js/bootstrap.min.js"></script> <!-- The javascript side of the bootstrap library; used for the menu on smaller screens -->
-    <link rel="stylesheet" href="css/templatemo-style.css"> <!-- General CSS styling of the page -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="css/templatemo-style.css"> 
 
     <!-- chart.js Library -->
     <script src="js/Chart.min.js"></script>
@@ -197,7 +197,7 @@
     //Zeichnen der Schweizer Grafik wenn die Seite lädt
     drawBarChart($('#ct_timeframe').val(), $('input[name="ct_cases"]').prop('checked'), $('input[name="ct_recovered"]').prop('checked'), $('input[name="ct_deaths"]').prop('checked'));
 
-    //EVERYTHING UNDER HERE ARE FUNCTIONS WHICH ARE     USED FOR THE DISPLAY OF DATA WHICH IS DONE IN THE PREVIOUS SECTION
+    
 
     // Funktion für das Zeichnen der Schweizer Grafik 
     function drawBarChart(timeframe, infected, recovered, deaths)
