@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Covid-19 Tracker</title>
 
-    <!-- This is a general library to make usage of javascript easier and cross-browser -->
+    <!-- jQuery Library -->
     <script src="js/jquery-3.3.1.min.js"></script>
 
-    <!-- General styling for the page -->
+    <!-- Style -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700"><!-- The font used on the page -->
     <link rel="stylesheet" href="css/fontawesome.min.css"><!-- Library of icons; this is used for the two icons in the menu -->
     <link rel="stylesheet" href="css/bootstrap.min.css"><!-- The css library used for general styling classes to give the page its layout -->
     <script src="js/bootstrap.min.js"></script> <!-- The javascript side of the bootstrap library; used for the menu on smaller screens -->
     <link rel="stylesheet" href="css/templatemo-style.css"> <!-- General CSS styling of the page -->
 
-    <!-- The library used to draw the chart -->
+    <!-- chart.js Library -->
     <script src="js/Chart.min.js"></script>
 </head>
 
@@ -54,7 +54,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">
                                 <i class="far fa-user"></i>
-                                About
+                                Über Uns
                             </a>
                         </li>
                     </ul>
@@ -78,25 +78,25 @@
 
             <div class="container-fluid mt-5">
                 <div class="tm-bg-primary-dark tm-block">
-                    <h2 class="tm-block-title">COVID in Switzerland</h2>
+                    <h2 class="tm-block-title">COVID 19 in der Schweiz</h2>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mt-3">
-                            <label>Timeframe</label>
+                            <label>Zeitfenster</label>
                             <select id="ct_timeframe">
                                 <option value="1">Total</option>
-                                <option value="0">Latest month</option>
+                                <option value="0">Letzter Monat</option>
                             </select>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mt-3">
-                            <label>Infected</label>
+                            <label>Infiziert</label>
                             <input type="checkbox" name="ct_cases" checked="checked" />
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mt-3">
-                            <label>Recovered</label>
+                            <label>Erholt</label>
                             <input type="checkbox" name="ct_recovered" checked="checked" />
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mt-3">
-                            <label>Deaths</label>
+                            <label>Verstorben</label>
                             <input type="checkbox" name="ct_deaths" checked="checked" />
                         </div>
                     </div>
@@ -104,15 +104,15 @@
                         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-3">
                             <h2 class="tm-block-title mt-5" id="ct_title"></h2>
                             <div id="ct_infected_val" class="country-data">
-                                <label>Infected:</label>
+                                <label>Infiziert:</label>
                                 <span>0</span>
                             </div>
                             <div id="ct_recovered_val" class="country-data">
-                                <label>Recovered:</label>
+                                <label>Erholt:</label>
                                 <span>0</span>
                             </div>
                             <div id="ct_deaths_val" class="country-data">
-                                <label>Deaths:</label>
+                                <label>Verstorben:</label>
                                 <span>0</span>
                             </div>
                         </div>
@@ -123,37 +123,37 @@
 
             <div class="container-fluid mt-5">
                 <div class="tm-bg-primary-dark tm-block">
-                    <h2 class="tm-block-title">Worldwide COVID Statistics</h2>
+                    <h2 class="tm-block-title">Weltweite COVID 19 Statistiken</h2>
                     <div class="row">
                         <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                            <label>Data type</label>
+                            <label>Auswahl</label>
                             <select id="ww_type">
-                                <option value="cases">Infections</option>
-                                <option value="recovered">Recoveries</option>
-                                <option value="deaths">Deaths</option>
+                                <option value="cases">Infiziert</option>
+                                <option value="recovered">Erholt</option>
+                                <option value="deaths">Verstorben</option>
                             </select>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                            <label>Timeframe</label>
+                            <label>Zeitfenster</label>
                             <select id="ww_timeframe">
                                 <option value="1">Total</option>
-                                <option value="0">Last 30 days</option>
+                                <option value="0">Letzte 30 Tage</option>
                             </select>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                            <label><div class="info-ball red"></div> <div class="info-bal-text">Country</div></label>
+                            <label><div class="info-ball red"></div> <div class="info-bal-text">Land</div></label>
                             <select id="ww_country1">
                                 <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option><option>Angola</option><option>Antigua and Barbuda</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option><option>Bahamas</option><option>Bahrain</option><option>Bangladesh</option><option>Barbados</option><option>Belarus</option><option>Belgium</option><option>Belize</option><option>Benin</option><option>Bhutan</option><option>Bolivia</option><option>Bosnia</option><option>Botswana</option><option>Brazil</option><option>Brunei</option><option>Bulgaria</option><option>Burkina Faso</option><option>Burma</option><option>Burundi</option><option>Cabo Verde</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Central African Republic</option><option>Chad</option><option>Chile</option><option>China</option><option>Colombia</option><option>Comoros</option><option>Congo</option><option>DRC</option><option>Costa Rica</option><option>Côte d'Ivoire</option><option>Croatia</option><option>Cuba</option><option>Cyprus</option><option>Czechia</option><option>Denmark</option><option>Diamond Princess</option><option>Djibouti</option><option>Dominica</option><option>Dominican Republic</option><option>Ecuador</option><option>Egypt</option><option>El Salvador</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Estonia</option><option>Swaziland</option><option>Ethiopia</option><option>Fiji</option><option>Finland</option><option>France</option><option>Gabon</option><option>Gambia</option><option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Grenada</option><option>Guatemala</option><option>Guinea</option><option>Guinea-Bissau</option><option>Guyana</option><option>Haiti</option><option>Holy See</option><option>Honduras</option><option>Hungary</option><option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Jamaica</option><option>Japan</option><option>Jordan</option><option>Kazakhstan</option><option>Kenya</option><option>S. Korea</option><option>Kosovo</option><option>Kuwait</option><option>Kyrgyzstan</option><option>Lao People's Democratic Republic</option><option>Latvia</option><option>Lebanon</option><option>Lesotho</option><option>Liberia</option><option>Libyan Arab Jamahiriya</option><option>Liechtenstein</option><option>Lithuania</option><option>Luxembourg</option><option>MS Zaandam</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Maldives</option><option>Mali</option><option>Malta</option><option>Marshall Islands</option><option>Mauritania</option><option>Mauritius</option><option>Mexico</option><option>Moldova</option><option>Monaco</option><option>Mongolia</option><option>Montenegro</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Nepal</option><option>Netherlands</option><option>New Zealand</option><option>Nicaragua</option><option>Niger</option><option>Nigeria</option><option>Macedonia</option><option>Norway</option><option>Oman</option><option>Pakistan</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option><option>Qatar</option><option>Romania</option><option>Russia</option><option>Rwanda</option><option>Saint Kitts and Nevis</option><option>Saint Lucia</option><option>Saint Vincent and the Grenadines</option><option>San Marino</option><option>Sao Tome and Principe</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Seychelles</option><option>Sierra Leone</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>Solomon Islands</option><option>Somalia</option><option>South Africa</option><option>South Sudan</option><option>Spain</option><option>Sri Lanka</option><option>Sudan</option><option>Suriname</option><option>Sweden</option><option selected="selected">Switzerland</option><option>Syrian Arab Republic</option><option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Timor-Leste</option><option>Togo</option><option>Trinidad and Tobago</option><option>Tunisia</option><option>Turkey</option><option>USA</option><option>Uganda</option><option>Ukraine</option><option>UAE</option><option>UK</option><option>Uruguay</option><option>Uzbekistan</option><option>Vanuatu</option><option>Venezuela</option><option>Vietnam</option><option>West Bank and Gaza</option><option>Western Sahara</option><option>Yemen</option><option>Zambia</option><option>Zimbabwe</option>
                             </select>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                            <label><div class="info-ball yellow"></div> <div class="info-bal-text">Country</div></label>
+                            <label><div class="info-ball yellow"></div> <div class="info-bal-text">Land</div></label>
                             <select id="ww_country2">
                                 <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option><option>Angola</option><option>Antigua and Barbuda</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option><option>Bahamas</option><option>Bahrain</option><option>Bangladesh</option><option>Barbados</option><option>Belarus</option><option>Belgium</option><option>Belize</option><option>Benin</option><option>Bhutan</option><option>Bolivia</option><option>Bosnia</option><option>Botswana</option><option>Brazil</option><option>Brunei</option><option>Bulgaria</option><option>Burkina Faso</option><option>Burma</option><option>Burundi</option><option>Cabo Verde</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Central African Republic</option><option>Chad</option><option>Chile</option><option>China</option><option>Colombia</option><option>Comoros</option><option>Congo</option><option>DRC</option><option>Costa Rica</option><option>Côte d'Ivoire</option><option>Croatia</option><option>Cuba</option><option>Cyprus</option><option>Czechia</option><option>Denmark</option><option>Diamond Princess</option><option>Djibouti</option><option>Dominica</option><option>Dominican Republic</option><option>Ecuador</option><option>Egypt</option><option>El Salvador</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Estonia</option><option>Swaziland</option><option>Ethiopia</option><option>Fiji</option><option>Finland</option><option>France</option><option>Gabon</option><option>Gambia</option><option>Georgia</option><option selected="selected">Germany</option><option>Ghana</option><option>Greece</option><option>Grenada</option><option>Guatemala</option><option>Guinea</option><option>Guinea-Bissau</option><option>Guyana</option><option>Haiti</option><option>Holy See</option><option>Honduras</option><option>Hungary</option><option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Jamaica</option><option>Japan</option><option>Jordan</option><option>Kazakhstan</option><option>Kenya</option><option>S. Korea</option><option>Kosovo</option><option>Kuwait</option><option>Kyrgyzstan</option><option>Lao People's Democratic Republic</option><option>Latvia</option><option>Lebanon</option><option>Lesotho</option><option>Liberia</option><option>Libyan Arab Jamahiriya</option><option>Liechtenstein</option><option>Lithuania</option><option>Luxembourg</option><option>MS Zaandam</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Maldives</option><option>Mali</option><option>Malta</option><option>Marshall Islands</option><option>Mauritania</option><option>Mauritius</option><option>Mexico</option><option>Moldova</option><option>Monaco</option><option>Mongolia</option><option>Montenegro</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Nepal</option><option>Netherlands</option><option>New Zealand</option><option>Nicaragua</option><option>Niger</option><option>Nigeria</option><option>Macedonia</option><option>Norway</option><option>Oman</option><option>Pakistan</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option><option>Qatar</option><option>Romania</option><option>Russia</option><option>Rwanda</option><option>Saint Kitts and Nevis</option><option>Saint Lucia</option><option>Saint Vincent and the Grenadines</option><option>San Marino</option><option>Sao Tome and Principe</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Seychelles</option><option>Sierra Leone</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>Solomon Islands</option><option>Somalia</option><option>South Africa</option><option>South Sudan</option><option>Spain</option><option>Sri Lanka</option><option>Sudan</option><option>Suriname</option><option>Sweden</option><option>Switzerland</option><option>Syrian Arab Republic</option><option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Timor-Leste</option><option>Togo</option><option>Trinidad and Tobago</option><option>Tunisia</option><option>Turkey</option><option>USA</option><option>Uganda</option><option>Ukraine</option><option>UAE</option><option>UK</option><option>Uruguay</option><option>Uzbekistan</option><option>Vanuatu</option><option>Venezuela</option><option>Vietnam</option><option>West Bank and Gaza</option><option>Western Sahara</option><option>Yemen</option><option>Zambia</option><option>Zimbabwe</option>
                             </select>
                         </div>
                         <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                            <label><div class="info-ball green"></div> <div class="info-bal-text">Country</div></label>
+                            <label><div class="info-ball green"></div> <div class="info-bal-text">Land</div></label>
                             <select id="ww_country3">
                                 <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option><option>Angola</option><option>Antigua and Barbuda</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option><option>Bahamas</option><option>Bahrain</option><option>Bangladesh</option><option>Barbados</option><option>Belarus</option><option>Belgium</option><option>Belize</option><option>Benin</option><option>Bhutan</option><option>Bolivia</option><option>Bosnia</option><option>Botswana</option><option>Brazil</option><option>Brunei</option><option>Bulgaria</option><option>Burkina Faso</option><option>Burma</option><option>Burundi</option><option>Cabo Verde</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Central African Republic</option><option>Chad</option><option>Chile</option><option>China</option><option>Colombia</option><option>Comoros</option><option>Congo</option><option>DRC</option><option>Costa Rica</option><option>Côte d'Ivoire</option><option>Croatia</option><option>Cuba</option><option>Cyprus</option><option>Czechia</option><option>Denmark</option><option>Diamond Princess</option><option>Djibouti</option><option>Dominica</option><option>Dominican Republic</option><option>Ecuador</option><option>Egypt</option><option>El Salvador</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Estonia</option><option>Swaziland</option><option>Ethiopia</option><option>Fiji</option><option>Finland</option><option>France</option><option>Gabon</option><option>Gambia</option><option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Grenada</option><option>Guatemala</option><option>Guinea</option><option>Guinea-Bissau</option><option>Guyana</option><option>Haiti</option><option>Holy See</option><option>Honduras</option><option>Hungary</option><option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Jamaica</option><option>Japan</option><option>Jordan</option><option>Kazakhstan</option><option>Kenya</option><option>S. Korea</option><option>Kosovo</option><option>Kuwait</option><option>Kyrgyzstan</option><option>Lao People's Democratic Republic</option><option>Latvia</option><option>Lebanon</option><option>Lesotho</option><option>Liberia</option><option>Libyan Arab Jamahiriya</option><option>Liechtenstein</option><option>Lithuania</option><option>Luxembourg</option><option>MS Zaandam</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Maldives</option><option>Mali</option><option>Malta</option><option>Marshall Islands</option><option>Mauritania</option><option>Mauritius</option><option>Mexico</option><option>Moldova</option><option>Monaco</option><option>Mongolia</option><option>Montenegro</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Nepal</option><option>Netherlands</option><option>New Zealand</option><option>Nicaragua</option><option>Niger</option><option>Nigeria</option><option>Macedonia</option><option>Norway</option><option>Oman</option><option>Pakistan</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option><option>Qatar</option><option>Romania</option><option>Russia</option><option>Rwanda</option><option>Saint Kitts and Nevis</option><option>Saint Lucia</option><option>Saint Vincent and the Grenadines</option><option>San Marino</option><option>Sao Tome and Principe</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Seychelles</option><option>Sierra Leone</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>Solomon Islands</option><option>Somalia</option><option>South Africa</option><option>South Sudan</option><option>Spain</option><option>Sri Lanka</option><option>Sudan</option><option>Suriname</option><option>Sweden</option><option>Switzerland</option><option>Syrian Arab Republic</option><option>Taiwan</option><option>Tajikistan</option><option>Tanzania</option><option>Thailand</option><option>Timor-Leste</option><option>Togo</option><option>Trinidad and Tobago</option><option>Tunisia</option><option>Turkey</option><option selected="selected">USA</option><option>Uganda</option><option>Ukraine</option><option>UAE</option><option>UK</option><option>Uruguay</option><option>Uzbekistan</option><option>Vanuatu</option><option>Venezuela</option><option>Vietnam</option><option>West Bank and Gaza</option><option>Western Sahara</option><option>Yemen</option><option>Zambia</option><option>Zimbabwe</option>
                             </select>
@@ -177,44 +177,40 @@
     var xhrLineChart = false;
     var xhrBarChart = false;
 
-    //set the chart to white font color
+    //Farbe für Grafik
     Chart.defaults.global.defaultFontColor = 'white';
 
-    //EVERYTHING UNDER HERE IS USED TO DISPLAY THE CORRECT DATA ON THE PAGE AND CONNECT THE EVENTS OF ALL THE USER INPUTS
 
-    //update the worldwide chart when a property has been changed in the dropdowns
+    //Update Weltweit Grafik wenn eine Auswahl geändert wird 
     $('#ww_type, #ww_timeframe, #ww_country1, #ww_country2, #ww_country3').on('change', function() {
         drawLineChart($('#ww_type').val(), $('#ww_timeframe').val(), $('#ww_country1').val(), $('#ww_country2').val(), $('#ww_country3').val());
     });
 
-    //draw the worldwide chart with the default values when the page loads
+    //Zeichnen der  Weltweit Grafik wenn die Seite lädt 
     drawLineChart($('#ww_type').val(), $('#ww_timeframe').val(), $('#ww_country1').val(), $('#ww_country2').val(), $('#ww_country3').val());
 
-    //update the Switzerland chart when a property has been changed in the dropdowns
+    //Update Schweizer Grafik wenn eine Auswahl geändert wird 
     $('#ct_timeframe, input[name="ct_cases"], input[name="ct_recovered"], input[name="ct_deaths"]').on('change', function() {
         drawBarChart($('#ct_timeframe').val(), $('input[name="ct_cases"]').prop('checked'), $('input[name="ct_recovered"]').prop('checked'), $('input[name="ct_deaths"]').prop('checked'));
     });
 
-    //draw the Switzerland chart with the default values when the page loads
+    //Zeichnen der Schweizer Grafik wenn die Seite lädt
     drawBarChart($('#ct_timeframe').val(), $('input[name="ct_cases"]').prop('checked'), $('input[name="ct_recovered"]').prop('checked'), $('input[name="ct_deaths"]').prop('checked'));
 
     //EVERYTHING UNDER HERE ARE FUNCTIONS WHICH ARE     USED FOR THE DISPLAY OF DATA WHICH IS DONE IN THE PREVIOUS SECTION
 
-    // function for drawing the barchart and setting the totals for Switzerland cases using a specific set of paramaters
+    // Funktion für das Zeichnen der Schweizer Grafik 
     function drawBarChart(timeframe, infected, recovered, deaths)
     {
-        //stop a previous request if we're making a new one before the last one is done
-        if (xhrBarChart)
-            xhrBarChart.abort();
-
-        //make the AJAX call to the API with the correct timeframe and countries
+        
+        //AJAX Call zur API für alle Monate oder einen Monat
         xhrBarChart = $.get('https://disease.sh/v3/covid-19/historical/Switzerland?lastdays=' + (timeframe == 1 ? 'all' : '1'), function(data) {
             xhr = false;
 
-            //format the data into groups the chart can read
+            //formatieren der daten
             data = processDataBarChart(data, infected, recovered, deaths, timeframe);
 
-            //set the title and totals of the general info
+            //Titel setzten
             $('#ct_title').text(data.title);
 
             if (data.total_infected)
@@ -232,7 +228,7 @@
             else
                 $('#ct_deaths_val').hide();
 
-            //draw the chart using the ChartJS library
+            //Zeichnen der Grafik mit chart.js
             $('#countryChart').html('<canvas />');
             var ctx = $('#countryChart canvas');
             var myChart = new Chart(ctx, {
@@ -258,30 +254,27 @@
         });
     }
 
-    // function for drawing the linechart for worldwide cases using a specific set of paramaters
+    //Funktion für das Zeichnen der Weltweiten Grafik 
     function drawLineChart(type, timeframe, country1, country2, country3)
     {
-        //stop a previous request if we're making a new one before the last one is done
-        if (xhrLineChart)
-            xhrLineChart.abort();
 
-        //make the AJAX call to the API with the correct timeframe and countries
+        //AJAX Call zur API für verschiedene Länder und alle Monate oder einen Monat
         xhrLineChart = $.get('https://disease.sh/v3/covid-19/historical/' + country1 + ',' + country2 + ',' + country3 + '?lastdays=' + (timeframe == 1 ? 'all' : '30'), function(data) {
             xhr = false;
 
-            //format the data into groups the chart can read
+            //formatieren der Daten
             data = processDataLineChart(data, type);
 
-            //set the title of the chart showing which data is being used
+            //Titel setzten
             let title = '';
 
-            if (type == 'cases') title = 'Infections';
-            if (type == 'recovered') title = 'Recoveries';
-            if (type == 'deaths') title = 'Deaths';
+            if (type == 'cases') title = 'Infektionen';
+            if (type == 'recovered') title = 'Erholte';
+            if (type == 'deaths') title = 'Verstorbene';
 
             $('#ww_title').text(title);
 
-            //draw the chart using the ChartJS library
+            //Zeichnen der Grafik mit chart.js
             $('#worldwideChart').html('<canvas />');
             var ctx = $('#worldwideChart canvas');
             var myChart = new Chart(ctx, {
@@ -306,10 +299,10 @@
         });
     }
 
-    //function which will process the data from the COVID API and format it into data the ChartJS library will understand
+    //Funktion die Daten der API für chartjs formatiert (weltweit)
     function processDataLineChart(data, type)
     {
-        //initialize the return variable which the chart needs to display its data
+        //return für das Darstellen der Daten 
         let returnVar = {
             dataSets : [
                 {
@@ -358,48 +351,48 @@
             stepSize : 0
         }
 
-        //process data from country1
+        //verarbeiten der Daten für Land 1
         for (var date in data[0].timeline[type])
         {
-            //get the value from the dataset
+            //Wert von Daten einlesen und in Variable schreiben
             let val = data[0].timeline[type][date];
 
-            //add the data to the graph
+            //Daten zum Graph hinzufügen 
             returnVar.dataSets[0].data.push(val);
 
-            //add the dates to the x-axis; we only need to do this once as each country has the same dates
+            //Datum an die x-Achse anfügen und an europäische Schreibweise anpassen
             date = date.split('/');
             returnVar.labels.push(date[1] + '/' + date[0] + '/' + date[2]);
 
-            //set the max value of the y-axis
+            //max. Wert für die x-Achse setzten
             if (returnVar.max < val)
                 returnVar.max = val;
         }
 
-        //process data from country2
+        //verarbeiten der Daten für Land 2
         for (var date in data[1].timeline[type])
         {
-            //get the value from the dataset
+             //Wert von Daten einlesen und in Variable schreiben
             let val = data[1].timeline[type][date];
 
-            //add the data to the graph
+            //Daten zum Graph hinzufügen 
             returnVar.dataSets[1].data.push(val);
 
-            //set the max value of the y-axis
+            //max. Wert für die x-Achse setzten
             if (returnVar.max < val)
                 returnVar.max = val;
         }
 
-        //process data from country3
+        //verarbeiten der Daten für Land 3
         for (var date in data[2].timeline[type])
         {
-            //get the value from the dataset
+            //Wert von Daten einlesen und in Variable schreiben
             let val = data[2].timeline[type][date];
 
-            //add the data to the graph
+            //Daten zum Graph hinzufügen
             returnVar.dataSets[2].data.push(val);
 
-            //set the max value of the y-axis
+            //max. Wert für die x-Achse setzten
             if (returnVar.max < val)
                 returnVar.max = val;
         }
@@ -407,13 +400,13 @@
         return returnVar;
     }
 
-    //function which will process the data from the COVID API and format it into data the ChartJS library will understand
+    //Funktion die Daten der API für chartjs formatiert (Schweiz)
     function processDataBarChart(data, infected, recovered, deaths, timeframe)
     {
         let currentMonth = '';
         let dataSet = {};
 
-        //initialize the return variable which the chart needs to display its data
+        //return für das Darstellen der Daten 
         let returnVar = {
             dataSets : [],
             labels : [],
@@ -423,136 +416,140 @@
             title: ''
         }
 
-        //create the values for the x-axis
+        //Werte für x-Achse erstellen 
         for (var date in data.timeline.cases) {
-            //get current month
+            //jetziger Monat anzeigen 
             let currentLabel = date.split('/');
             currentLabel = currentLabel[0] + '/' + currentLabel[2];
 
-            //add x-axis item
+            //zu X-Achse hinzufügen
             if (returnVar.labels.indexOf(currentLabel) == '-1')
                 returnVar.labels.push(currentLabel);
         }
 
-        //process data infected
+        //verarbeiten der Daten für infected
         if (infected)
         {
             dataSet = {};
             for (var date in data.timeline.cases) {
-                //get the value from the dataset
+                //Wert von den cases in Variable schreiben 
                 let val = data.timeline.cases[date];
 
-                //get month
+                //Datum anpassen und in Variable schreiben
                 let itemMonth = date.split('/');
                 itemMonth = itemMonth[0] + '/' + itemMonth[2];
 
-                //add month to data set
+                //Monat in dataSet schreiben 
                 if (!(itemMonth in dataSet))
                     dataSet[itemMonth] = 0;
 
-                //add value to data set
+                //Wert vom Monat in dataSet schreiben 
                 dataSet[itemMonth] = val;
             }
 
-            //convert the dataset to something ChartJS can read
-            let returnData = [];
 
+             //return für chartjs
+             let returnData = [];
+
+            //dataSet für chartjs konvertieren
             for (var key in dataSet)
                 returnData.push(dataSet[key]);
 
-            //set the return value for the ChartJS
+            //return Wert für chartjs setzten 
             returnVar.dataSets.push({
-                label: "Infected",
+                label: "Infiziert",
                 backgroundColor: "rgba(255, 99, 132, .6)",
                 borderColor: "rgba(255, 99, 132, 1)",
                 borderWidth: 1,
                 data: returnData
             });
 
-            //set the total value for the general info
+            //Total Wert setzten 
             returnVar.total_infected = returnData[returnData.length-1];
         }
 
-        //process data deaths
+        //verarbeiten der Daten für deaths
         if (deaths)
         {
             dataSet = {};
             for (var date in data.timeline.deaths) {
-                //get the value from the dataset
+                //Wert von den deaths in Variable schreiben
                 let val = data.timeline.deaths[date];
 
-                //get month
+                //Datum anpassen und in Variable schreiben
                 let itemMonth = date.split('/');
                 itemMonth = itemMonth[0] + '/' + itemMonth[2];
 
-                //add month to data set
+                //Monat in dataSet schreiben 
                 if (!(itemMonth in dataSet))
                     dataSet[itemMonth] = 0;
 
-                //add value to data set
+                //Wert vom Monat in dataSet schreiben
                 dataSet[itemMonth] = val;
             }
 
-            //convert the dataset to something ChartJS can read
+            //return für chartjs
             let returnData = [];
 
+            //dataSet für chartjs konvertieren
             for (var key in dataSet)
                 returnData.push(dataSet[key]);
 
-            //set the return value for the ChartJS
+            //return Wert für chartjs setzten 
             returnVar.dataSets.push({
-                label: "Deaths",
+                label: "Verstorben",
                 backgroundColor: "rgba(0, 255, 0, .6)",
                 borderColor: "rgba(0, 255, 0, 1)",
                 borderWidth: 1,
                 data: returnData
             });
 
-            //set the total value for the general info
+            //Total Wert setzten
             returnVar.total_deaths = returnData[returnData.length-1];
         }
 
-        //process data recovered
+        //verarbeiten der Daten für deaths recovered
         if (recovered)
         {
             dataSet = {};
             for (var date in data.timeline.recovered) {
-                //get the value from the dataset
+                //Wert von den recovered in Variable schreiben
                 let val = data.timeline.recovered[date];
 
-                //get month
+                //Datum anpassen und in Variable schreiben
                 let itemMonth = date.split('/');
                 itemMonth = itemMonth[0] + '/' + itemMonth[2];
 
-                //add month to data set
+                //Monat in dataSet schreiben 
                 if (!(itemMonth in dataSet))
                     dataSet[itemMonth] = 0;
 
-                //add value to data set
+                //Wert vom Monat in dataSet schreiben
                 dataSet[itemMonth] = val;
             }
 
-            //convert the dataset to something ChartJS can read
+            //return für chartjs
             let returnData = [];
 
+            //dataSet für chartjs konvertieren
             for (var key in dataSet)
                 returnData.push(dataSet[key]);
 
-            //set the return value for the ChartJS
+            //return Wert für chartjs setzten 
             returnVar.dataSets.push({
-                label: "Recovered",
+                label: "Erholt",
                 backgroundColor: "rgba(255, 255, 0, 06)",
                 borderColor: "rgba(255, 255, 0, 1)",
                 borderWidth: 1,
                 data: returnData
             });
 
-            //set the total value for the general info
+            //Total Wert setzten
             returnVar.total_recovered = returnData[returnData.length-1];
         }
 
-        //set title for totals
-        returnVar.title = timeframe == 1 ? 'Total' : 'Total for ' + returnVar.labels[0];
+        //Titel für Total setzten
+        returnVar.title = timeframe == 1 ? 'Total' : 'Total für ' + returnVar.labels[0];
 
         return returnVar;
     }
