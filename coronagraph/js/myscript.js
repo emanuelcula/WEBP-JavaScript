@@ -332,7 +332,7 @@ function processDataBarChart(data, infected, recovered, deaths, timeframe)
         returnVar.total_deaths = returnData[returnData.length-1];
     }
 
-    //verarbeiten der Daten für deaths recovered
+    //verarbeiten der Daten für recovered
     if (recovered)
     {
         dataSet = {};
