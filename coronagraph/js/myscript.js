@@ -25,11 +25,11 @@ drawBarChart($('#ct_timeframe').val(), $('input[name="ct_cases"]').prop('checked
 
 // Funktion für das Zeichnen der Schweizer Grafik
 function drawBarChart(timeframe, infected, recovered, deaths)
+console.log(drawLineChart)
 {
 
     //AJAX Call zur API für alle Monate oder einen Monat
     xhrBarChart = $.get('https://disease.sh/v3/covid-19/historical/Switzerland?lastdays=' + (timeframe == 1 ? 'all' : '1'), function(data) {
-        xhr = false;
 
         //formatieren der daten
         data = processDataBarChart(data, infected, recovered, deaths, timeframe);
@@ -84,7 +84,6 @@ function drawLineChart(type, timeframe, country1, country2, country3)
 
     //AJAX Call zur API für verschiedene Länder und alle Monate oder einen Monat
     xhrLineChart = $.get('https://disease.sh/v3/covid-19/historical/' + country1 + ',' + country2 + ',' + country3 + '?lastdays=' + (timeframe == 1 ? 'all' : '30'), function(data) {
-        xhr = false;
 
         //formatieren der Daten
         data = processDataLineChart(data, type);
@@ -188,7 +187,7 @@ function processDataLineChart(data, type)
         date = date.split('/');
         returnVar.labels.push(date[1] + '/' + date[0] + '/' + date[2]);
 
-        //max. Wert für die x-Achse setzten
+        //max. Wert für die y-Achse setzten
         if (returnVar.max < val)
             returnVar.max = val;
     }
@@ -202,7 +201,7 @@ function processDataLineChart(data, type)
         //Daten zum Graph hinzufügen
         returnVar.dataSets[1].data.push(val);
 
-        //max. Wert für die x-Achse setzten
+        //max. Wert für die y-Achse setzten
         if (returnVar.max < val)
             returnVar.max = val;
     }
@@ -216,7 +215,7 @@ function processDataLineChart(data, type)
         //Daten zum Graph hinzufügen
         returnVar.dataSets[2].data.push(val);
 
-        //max. Wert für die x-Achse setzten
+        //max. Wert für die y-Achse setzten
         if (returnVar.max < val)
             returnVar.max = val;
     }
