@@ -25,7 +25,6 @@ drawBarChart($('#ct_timeframe').val(), $('input[name="ct_cases"]').prop('checked
 
 // Funktion für das Zeichnen der Schweizer Grafik
 function drawBarChart(timeframe, infected, recovered, deaths)
-console.log(drawLineChart)
 {
 
     //AJAX Call zur API für alle Monate oder einen Monat
